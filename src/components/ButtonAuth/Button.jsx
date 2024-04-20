@@ -1,9 +1,9 @@
 import './button.css'
 
+function Button({ className, onClick, children }) {
 
-function Button({ cls, children }) {
     return(
-        <button className={`btn-auth ${cls}`}>
+        <button className={`btn-auth ${className}`} onClick={onClick}>
             { children }
         </button>
     )

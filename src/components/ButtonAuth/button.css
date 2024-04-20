@@ -8,8 +8,8 @@
     border: none;
     outline: none;
     border-radius: 1rem;
-
     transition: background-color .3s ease-in-out;
+    border: 5px solid transparent;
 }
 
 .log {
@@ -22,10 +22,18 @@
     background-color: #247855;
 }
 
+.can {
+    background-color: #B81212;
+}
+
 .log:hover {
     background-color: #bfe86e;
 }
 
 .reg:hover {
-    background-color: #1d8559;
+    background-color: #13bf77;
+}
+
+.can:hover {
+    background-color: #ff0000;
 }
