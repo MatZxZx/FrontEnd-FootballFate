@@ -27,7 +27,7 @@ function FormLogin() {
     }
 
     function onClickLogin() {
-        if(username === '') {
+        if (username === '') {
             setErrorUsername(true)
         }
         if (password === '') {
@@ -48,14 +48,21 @@ function FormLogin() {
     return (
         <form className='form-auth' onSubmit={handleSubmit} >
             <div>
-                {errorUsername && <p className='text-red-500 mb-1'>Campo requerido *</p>}
-                <input className={inputUsernameClassName} type='text' placeholder='Mail...' autoFocus
-                    value={username} onChange={onChangeUsername} />
+                { errorUsername && <p className='text-red-500 mb-1'>Campo requerido *</p> }
+                <input className={inputUsernameClassName}
+                    type='text'
+                    placeholder='Mail...'
+                    autoFocus
+                    value={username}
+                    onChange={onChangeUsername}/>
             </div>
             <div>
-                {errorPassword && <p className='text-red-500 mb-1'>Campo requerido *</p>}
-                <input className={inputPasswordClassName} type='password'  placeholder='Contaseña...'
-                    value={password} onChange={onChangePassword} />
+                { errorPassword && <p className='text-red-500 mb-1'>Campo requerido *</p> }
+                <input className={inputPasswordClassName}
+                    type='password'
+                    placeholder='Contaseña...'
+                    value={password}
+                    onChange={onChangePassword}/>
             </div>
             <Button className='log' onClick={onClickLogin}>Iniciar Secion</Button>
             <Button className='reg' onClick={onClickRegister}>Registrarse</Button>
