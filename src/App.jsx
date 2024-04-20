@@ -1,5 +1,6 @@
 import React from 'react'
-import {Form} from './components/Form'
+import {Form} from './components/FormLogin/Form'
+//import Button from './components/example/Button'
 import { userRequest, registRequest} from './services/auth'
 import './components/start/button.css'
 import Button from './components/start/Button'

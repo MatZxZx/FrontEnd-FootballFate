@@ -1,7 +1,6 @@
 import "./Form.css"
 import { useState } from "react"
 
-
 export function Form(){
 
     const [name, setName] = useState("")
@@ -25,20 +24,21 @@ export function Form(){
     return(
 
         <section>
-
-            <h1>Login</h1>
+            
+            <div className="loginText">
+                <h1>Inicia Sesión o Registrate</h1>
+            </div>
 
             <form className="form"
             onSubmit={handleSubmit}
             >
 
-
-                <input type="text" 
+                <input type="text" className="input" placeholder='Mail...'
                 
                 value={name} onChange={e => setName(e.target.value)}
 
                 />
-                <input type="password" 
+                <input type="password"  className="input" placeholder='Contaseña...'
                 
                 value={pass} onChange={e => setPass(e.target.value)}
 
