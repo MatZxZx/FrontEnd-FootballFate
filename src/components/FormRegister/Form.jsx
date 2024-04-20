@@ -31,15 +31,15 @@ export function Form(){
             onSubmit={handleSubmit}
             >
 
-
-                <input type="text" 
+                <input type="text" className="input"
                 
                 value={name} onChange={e => setName(e.target.value)}
 
                 />
-                <input type="password" 
+                <input type="password" className="input" 
                 
-                value={pass} onChange={e => setPass(e.target.value)}
+                
+                value={pass} onChange={e => setPass(e.target.value)} 
 
                 />
                 <button>Iniciar Sesión</button>
