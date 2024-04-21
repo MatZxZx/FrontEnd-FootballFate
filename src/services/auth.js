@@ -7,10 +7,10 @@ import api from './API.js'
  * @returns Promise<AxiosResponse>
  */
 export async function loginRequest(username, password) {
-    return await api.post({
-        username,
-        password
-    })
+  return await api.post({
+    username,
+    password
+  })
 }
 
 /**
@@ -22,14 +22,14 @@ export async function loginRequest(username, password) {
  * @returns Promise<AxiosResponse>
  */
 export async function registerRequest(username, teamName, email, password) {
-    return await api.post({
-        username,
-        teamName,
-        email,
-        password
-    })
+  return await api.post({
+    username,
+    teamName,
+    email,
+    password
+  })
 }
 
 export async function logoutRequest() {
-    return await api.post()
+  return await api.post()
 }
