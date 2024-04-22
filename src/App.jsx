@@ -1,32 +1,43 @@
 import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home/Home'
+import ProtectedRoute from './ProtectedRoute'
+import Landing from './pages/Landing/Landing'
 import Register from './pages/Register/Register'
+import Home from './pages/Home/Home'
+import Profile from './pages/Profile/Profile'
+import Welcome from './pages/Welcome/Welcome'
+import Team from './pages/Team/Team'
 import { useSelector } from 'react-redux'
+import useAuth from './hooks/useAuth'
 
-function UserCard() {
+function App() {
 
-  const authState = useSelector(state => state.auth)
+  const auth = useSelector(state => state.auth)
+  const { setAuth, setLoading } = useAuth()
 
-  return (
-    <>
-      <div>
-        <p className='text-white text-xl'>Email: {authState.email}</p>
-      </div>
-    </>
-  )
-}
-
-export default function App() {
+  const { isAuth, isLoading } = auth.auth
 
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/auth/login' element={<Register />} />
-        <Route path='/auth/register' element={<Register />} />
-        <Route path='/home' element={<h1 className='text-4xl text-white text-center font-black mt-24'>Esta es la home</h1>} />
+        <Route path='/' element={<Landing />} />
+        <Route path='/register' element={<Register />} />
+        <Route element={<ProtectedRoute/>} >
+          <Route path='/home' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/welcome' element={<Welcome />} />
+          <Route path='/team' element={<Team />} />
+        </Route>
       </Routes>
-      <UserCard />
+      {/* <h1 className='text-white text-2xl'>{`${isAuth} ${isLoading}`}</h1>
+      <button className='bg-white' onClick={() => setAuth(!isAuth)}>
+        autorizar
+      </button>
+      <button className='bg-white' onClick={() => setLoading(!isLoading)}>
+        cargando
+      </button> */}
     </>
+    
   )
 }
+
+export default App

@@ -3,7 +3,8 @@ import axios from 'axios'
 const URL = import.meta.env.VITE_EXAMPLE_API
 
 const instance = axios.create({
-    baseURL: URL
+    baseURL: URL,
+    withCredentials: true
 })
 
 instance.interceptors.request.use((request) => {

@@ -18,9 +18,9 @@
   border-radius: 1rem;
   color: black;
   /* box-shadow: 0 0.4rem #a1a1a1; */
-  border: 5px solid transparent;
+  border: 3px solid transparent;
 }
 
 .input-auth:focus {
-  border: 5px solid #247855;
+  border-color: #247855;
 }

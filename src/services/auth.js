@@ -1,4 +1,6 @@
-import api from './API.js'
+import axios from './axios.js'
+
+// TODO: INCLUIR ENDPOINTS
 
 /**
  * 
@@ -7,7 +9,7 @@ import api from './API.js'
  * @returns Promise<AxiosResponse>
  */
 export async function loginRequest(username, password) {
-  return await api.post({
+  return await axios.post('', {
     username,
     password
   })
@@ -22,7 +24,7 @@ export async function loginRequest(username, password) {
  * @returns Promise<AxiosResponse>
  */
 export async function registerRequest(username, teamName, email, password) {
-  return await api.post({
+  return await axios.post('', {
     username,
     teamName,
     email,
@@ -31,5 +33,9 @@ export async function registerRequest(username, teamName, email, password) {
 }
 
 export async function logoutRequest() {
-  return await api.post()
+  return await axios.post('')
+}
+
+export async function verifyTokenRequest() {
+  return await axios.get('')
 }

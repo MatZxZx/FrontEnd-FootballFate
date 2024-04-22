@@ -1,10 +1,9 @@
-import './formLogin.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { changeUser } from '../../redux/features/auth/authSlice'
 import Button from '../ButtonAuth/Button'
-import { loginRequest } from '../../services/auth'
+import useAuth from '../../hooks/useAuth'
+import useUser from '../../hooks/useUser'
+import './formLogin.css'
 
 function FormLogin() {
 
@@ -20,9 +19,14 @@ function FormLogin() {
       setError: setErrorPassword
     }
   })
+  const { setAuth, setLoading } = useAuth()
+  const { setUser: setUserState } = useUser()
 
-  const dispatch = useDispatch()
   const navigate = useNavigate()
+
+  function handleFocus(e) {
+    user[e.target.name].setError(false)
+  }
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -36,20 +40,21 @@ function FormLogin() {
       setErrorPassword(true)
     }
     if (email !== '' && password !== '') {
-      // const res = await loginRequest()
-      // if (res.status === 'ok') {
-      // navigate('/home')
-      // }
       console.log('todo OK')
+      setAuth(true)
+      setLoading(false)
+      setUserState({
+        id: '',
+        username: '',
+        email
+      })
+      navigate('/home')
     }
-    dispatch(changeUser({
-      email,
-      password
-    }))
+
   }
 
   function handleClickRegister() {
-    navigate('/auth/register')
+    navigate('/register')
   }
 
   function handleChange(e) {
@@ -65,8 +70,9 @@ function FormLogin() {
     user[field].setError(false)
   }
 
-  const inputUsernameClassName = `${errorEmail ? 'input-auth-invalid' : ''} input-auth`
-  const inputPasswordClassName = `${errorPassword ? 'input-auth-invalid' : ''} input-auth`
+  function getInputClassName(errorState) {
+    return `${errorState ? 'input-auth-invalid' : ''} input-auth`
+  }
 
   return (
     <form className='form-auth' onSubmit={handleSubmit} >
@@ -74,22 +80,24 @@ function FormLogin() {
         {errorEmail && <p className='text-red-500 mb-1'>Campo requerido *</p>}
         <input
           name='email'
-          className={inputUsernameClassName}
+          className={getInputClassName(errorEmail)}
           type='text'
           placeholder='Mail...'
           autoFocus
           value={user.email.value}
-          onChange={handleChange} />
+          onChange={handleChange}
+          onFocus={handleFocus} />
       </div>
       <div>
         {errorPassword && <p className='text-red-500 mb-1'>Campo requerido *</p>}
         <input
           name='password'
-          className={inputPasswordClassName}
+          className={getInputClassName(errorPassword)}
           type='password'
           placeholder='Contaseña...'
           value={user.password.value}
-          onChange={handleChange} />
+          onChange={handleChange}
+          onFocus={handleFocus} />
       </div>
       <Button className='log' type='submit'>Iniciar Secion</Button>
       <Button className='reg' onClick={handleClickRegister} type='button' >Registrarse</Button>
