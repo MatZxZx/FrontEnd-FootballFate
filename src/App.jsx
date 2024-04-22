@@ -8,6 +8,7 @@ import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
 import { useSelector } from 'react-redux'
 import useAuth from './hooks/useAuth'
+import PlayerListed from './components/HomePlayerListed/PlayerListed'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/list' element={<PlayerListed />} />
         <Route path='/' element={<Landing />} />
         <Route path='/register' element={<Register />} />
         <Route element={<ProtectedRoute/>} >
