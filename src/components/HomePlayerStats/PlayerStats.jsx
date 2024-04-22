@@ -10,10 +10,23 @@ import './PStats.css'
                 </div>
 </div> */
 
+function position_color(position){
+    if (position == 'DF'){
+        return 'text-[#58C6CD]'
+    }
+    if (position == 'DEL'){
+        return 'text-[#C71919]'
+    }
+    if (position == 'MC'){
+        return 'text-[#E3E816]'
+    }
 
+}
 
 
 function PlayerStats({playerName, position, points}){
+
+
     return(
         <div class='text-white'>
             <div className='p-4 flex bg-[#202020]'>
@@ -27,7 +40,7 @@ function PlayerStats({playerName, position, points}){
 
                     </p>
                     <div className='flex items-center gap-6'>
-                        <p className='text-base font-bold text-[#58C6CD]'>
+                        <p className={'text-base font-bold  ' + position_color(position)}>
 
                             {position}
 
