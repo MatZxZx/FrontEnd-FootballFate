@@ -7,6 +7,7 @@ import './formLogin.css'
 
 function FormLogin() {
 
+  const [hiddenPassword, setHiddenPassword] = useState(true)
   const [errorEmail, setErrorEmail] = useState(false)
   const [errorPassword, setErrorPassword] = useState(false)
   const [user, setUser] = useState({
@@ -74,6 +75,11 @@ function FormLogin() {
     return `${errorState ? 'input-auth-invalid' : ''} input-auth`
   }
 
+  const passwordIcon = <i className="fa-solid fa-eye"></i>
+  const passwordVisibilityIcon = <i className="fa-solid fa-eye-slash"></i>
+
+  const currentPasswordIcon = hiddenPassword ? passwordIcon : passwordVisibilityIcon
+
   return (
     <form className='form-auth' onSubmit={handleSubmit} >
       <div>
@@ -90,16 +96,24 @@ function FormLogin() {
       </div>
       <div>
         {errorPassword && <p className='text-red-500 mb-1'>Campo requerido *</p>}
-        <input
-          name='password'
-          className={getInputClassName(errorPassword)}
-          type='password'
-          placeholder='Contaseña...'
-          value={user.password.value}
-          onChange={handleChange}
-          onFocus={handleFocus} />
+        <div className='container-password-input'>
+          <input
+            name='password'
+            className={getInputClassName(errorPassword)}
+            type={hiddenPassword ? 'password' : 'text'}
+            placeholder='Contaseña...'
+            value={user.password.value}
+            onChange={handleChange}
+            onFocus={handleFocus} />
+          <button className='hidden-password-btn-input-login' onClick={() => setHiddenPassword(!hiddenPassword)} type='button'>
+            {
+              currentPasswordIcon
+            }
+          </button>
+        </div>
+        
       </div>
-      <Button className='log' type='submit'>Iniciar Secion</Button>
+      <Button className='log' type='submit'>Iniciar Sesion</Button>
       <Button className='reg' onClick={handleClickRegister} type='button' >Registrarse</Button>
     </form>
   )
