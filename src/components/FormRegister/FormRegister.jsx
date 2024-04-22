@@ -71,7 +71,7 @@ function FormRegister() {
   }
 
   function handleClickCancel() {
-    navigate('/auth/login')
+    navigate('/')
   }
 
   function handleChange(e) {
