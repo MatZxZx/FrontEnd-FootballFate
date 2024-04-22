@@ -8,6 +8,7 @@ import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
 import { useSelector } from 'react-redux'
 import useAuth from './hooks/useAuth'
+import StatsGrid from './components/HomePlayerStats/PlayerStats'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/stats' element={<StatsGrid/>}/>
         <Route path='/' element={<Landing />} />
         <Route path='/register' element={<Register />} />
         <Route element={<ProtectedRoute/>} >
