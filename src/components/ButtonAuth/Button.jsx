@@ -3,7 +3,9 @@ import './button.css'
 function Button({ className, onClick, children, ...props }) {
 
   function handleClick() {
-    onClick()
+    if (onClick) {
+      onClick()
+    }
   }
 
   return (

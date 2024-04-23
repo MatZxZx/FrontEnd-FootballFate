@@ -88,7 +88,7 @@ function FormLogin() {
           name='email'
           className={getInputClassName(errorEmail)}
           type='text'
-          placeholder='Mail...'
+          placeholder='Nombre de usuario o Mail...'
           autoFocus
           value={user.email.value}
           onChange={handleChange}

@@ -14,7 +14,7 @@ function useUser() {
   if (CURRENT_ENV === 'dev')
     return {
       setUser: (user) => {
-        if (localStorage.get('token')) {
+        if (localStorage.getItem('token')) {
           localStorage.setItem('user', user)
         }
         setUser(user)
