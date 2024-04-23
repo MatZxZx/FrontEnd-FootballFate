@@ -1,0 +1,46 @@
+.PlayerListed {
+    
+    color: white;
+    border-radius: 25px;
+    background: #202020;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+   
+    width: max-content;
+
+    padding: 10px;
+    padding-right: 20px;
+      
+}
+
+.playerNameNTeam {
+    font-size: xxx-large;
+    text-align: left;
+}
+
+.team {
+
+    font-size: large;
+    color: gray;
+
+}
+
+.playerPlaceNPoints{
+
+    font-size: xxx-large;
+    
+}
+
+.points{
+
+    color: aqua;
+    font-size: large;
+
+
+}
+
+.playerImg{
+
+    width: 100px;
+
+}

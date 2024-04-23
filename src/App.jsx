@@ -8,7 +8,6 @@ import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
 import { useSelector } from 'react-redux'
 import useAuth from './hooks/useAuth'
-import SectionPlayerWeek from './components/SectionPlayerWeek/SectionPlayerWeek'
 
 function App() {
 
@@ -20,7 +19,6 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/chap' element={<SectionPlayerWeek/>} />
         <Route path='/' element={<Landing />} />
         <Route path='/register' element={<Register />} />
         <Route element={<ProtectedRoute/>} >
