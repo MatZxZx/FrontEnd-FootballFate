@@ -11,7 +11,7 @@ export default [
   },
   {
     name: 'Tosco',
-    teamname: 'Linierspool FC CF',
+    teamname: 'Linierspool',
     points: '100'
   },
   {
@@ -28,10 +28,5 @@ export default [
     name: 'Duarte',
     teamname: 'Duarte CF',
     points: '89'
-  },
-  {
-    name: 'ElMoschen123',
-    teamname: 'Wolloktastic CF',
-    points: '120'
-  },
+  }
 ]

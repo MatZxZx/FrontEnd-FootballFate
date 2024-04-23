@@ -11,9 +11,9 @@ function TableCalification() {
   }, [])
 
   return (
-    <div>
+    <div className='w-[420px] flow-shadow rounded-lg bg-[#202020]'>
       {
-        players.map(player => <PlayerListed />)
+        players.map((player, i) => <PlayerListed name={player.name} place={i + 1} points={player.points} team={player.teamname} />)
       }
     </div>
   )

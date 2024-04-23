@@ -1,11 +1,8 @@
 import avatar from '../../assets/avatar-one.png'
 import Button from '../ButtonAuth/Button'
 import { useNavigate } from 'react-router-dom'
+import { getWidthByPoints } from '../../helpers/func'
 import './landing-section-player-week.css'
-
-function getWidthByPoints(points) {
-  return points > 20 ? 512 : 512 / 20 * points 
-}
 
 function PointsBar({ amountPoints, img }) {
 
