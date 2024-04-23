@@ -6,12 +6,13 @@ import Profile from './pages/Profile/Profile'
 import Register from './pages/Register/Register'
 import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
+import StatsGrid from './components/HomePlayerStats/PlayerStats'
 
 function DevApp() {
   return (
     <Routes>
       <Route path='mati'></Route>
-      <Route path='facu'></Route>
+      <Route path='facu' element={<StatsGrid />}></Route>
       <Route path='chap'></Route>
     </Routes>
   )
