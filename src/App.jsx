@@ -7,12 +7,15 @@ import Register from './pages/Register/Register'
 import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
 
+// Componentes de desarrollo
+import ChapPage from './dev-components/ChapPage'
+
 function DevApp() {
   return (
     <Routes>
       <Route path='mati'></Route>
       <Route path='facu'></Route>
-      <Route path='chap'></Route>
+      <Route path='chap' element={<ChapPage/>}></Route>
     </Routes>
   )
 }

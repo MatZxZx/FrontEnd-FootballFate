@@ -77,11 +77,10 @@ function FormLogin() {
 
   const passwordIcon = <i className="fa-solid fa-eye"></i>
   const passwordVisibilityIcon = <i className="fa-solid fa-eye-slash"></i>
-
-  const currentPasswordIcon = hiddenPassword ? passwordIcon : passwordVisibilityIcon
+  const currentPasswordIcon = !hiddenPassword ? passwordIcon : passwordVisibilityIcon
 
   return (
-    <form className='form-auth' onSubmit={handleSubmit} >
+    <form className='w-full form-auth' onSubmit={handleSubmit} >
       <div>
         {errorEmail && <p className='text-red-500 mb-1'>Campo requerido *</p>}
         <input

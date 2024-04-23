@@ -1,8 +1,7 @@
-import React from 'react'
-import './section-player-week.css'
 import avatar from '../../assets/avatar-one.png'
 import Button from '../ButtonAuth/Button'
 import { useNavigate } from 'react-router-dom'
+import './landing-section-player-week.css'
 
 function getWidthByPoints(points) {
   return points > 20 ? 512 : 512 / 20 * points 
@@ -30,13 +29,13 @@ function PointsBar({ amountPoints, img }) {
   )
 }
 
-function SectionPlayerWeek() {
+function LandingSectionPlayerWeek() {
 
   const navigate = useNavigate()
 
   return (
-    <div className='w-[1600px] mx-auto flex justify-between items-center'>
-      <div>
+    <div className='w-full flex justify-between items-center'>
+      <div className='w-1/2'>
         <h2 className='text-xl text-primary font-poppins font-bold mb-8'>Lo mejores jugadores de la semana</h2>
         <div className='flex flex-col gap-4'>
           <PointsBar amountPoints={18} />
@@ -44,9 +43,9 @@ function SectionPlayerWeek() {
           <PointsBar amountPoints={8} />
         </div>
       </div>
-      <div className='w-[600px] flex flex-col gap-4'>
-        <p className='text-base text-primary font-poppins font-medium'>El rendimiento de los jugadores son puntos</p>
-        <p className='text-base text-primary font-poppins font-medium'>Elige bien a tus jugadores para llegar a la cima de la clasificacion con tu equipo</p>
+      <div className='w-1/2 flex flex-col gap-4'>
+        <p className='text-base text-center text-primary font-poppins font-medium'>El rendimiento de los jugadores son puntos</p>
+        <p className='text-base text-center text-primary font-poppins font-medium'>Elige bien a tus jugadores para llegar a la cima de la clasificacion con tu equipo</p>
         <div className='mx-auto w-[252px] mt-4'>
           <Button className='log' onClick={() => navigate('/home')}>
             Crear tu equipo
@@ -57,4 +56,4 @@ function SectionPlayerWeek() {
   )
 }
 
-export default SectionPlayerWeek
+export default LandingSectionPlayerWeek
