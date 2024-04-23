@@ -1,7 +1,7 @@
 import React from 'react'
 import './PlayerListed.css'
 
-export default function PlayerListed() {
+export default function PlayerListed({name, team, place, points}) {
   return (
     
     <div className='PlayerListed flex gap-9'>
@@ -10,11 +10,11 @@ export default function PlayerListed() {
 
         <div className='playerNameNTeam'>
         
-            <p>ElMoschen123</p>
+            <p>{name}</p>
 
             <div className='team'>
 
-                <p>Wolloktastic CF</p>
+                <p>{team}</p>
 
             </div>
         
@@ -22,11 +22,11 @@ export default function PlayerListed() {
 
         <div className='playerPlaceNPoints'>
 
-            <p>1°</p>
+            <p>{place}</p>
 
             <div className='points'>
 
-                <p>120 PTS</p>
+                <p>{points}</p>
 
             </div>
 
