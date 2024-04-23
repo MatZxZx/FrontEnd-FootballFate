@@ -55,6 +55,10 @@
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    width: 400px;
+    margin:auto;
+    box-shadow: -1px 5px 15px 2px rgb(41, 229, 85, .1);
+
     }
     
     .div1 { grid-area: 1 / 1 / 2 / 2; }

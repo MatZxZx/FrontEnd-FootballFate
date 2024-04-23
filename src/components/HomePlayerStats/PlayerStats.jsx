@@ -11,16 +11,16 @@ import './PStats.css'
 </div> */
 
 function position_color(position){
-    if (position == 'DF'){
+    switch(position){
+    case 'DF':
         return 'text-[#58C6CD]'
-    }
-    if (position == 'DEL'){
+    case 'DEL':
         return 'text-[#C71919]'
-    }
-    if (position == 'MC'){
+    case 'MC':
         return 'text-[#E3E816]'
+    case 'PT':
+        return 'text-[#CC40E2]'
     }
-
 }
 
 
@@ -29,7 +29,7 @@ function PlayerStats({playerName, position, points}){
 
     return(
         <div class='text-white'>
-            <div className='p-4 flex bg-[#202020]'>
+            <div className='p-4 flex w-[200px]'>
                 <div>
                     <img src="src\assets\shirt.png" alt="" />
                 </div>
@@ -67,7 +67,7 @@ export default function StatsGrid(){
         Mejores puntajes de la anterior jornada
         </h3>
         
-    <div class="parent">
+    <div class="parent bg-[#202020] rounded-lg">
         
         <div class="div1">
         
@@ -90,7 +90,7 @@ export default function StatsGrid(){
 
         <div class="div4">
 
-        <PlayerStats playerName='Pietro' position='DF' points='50'></PlayerStats>
+        <PlayerStats playerName='Moschen' position='PT' points='999'></PlayerStats>
 
         </div>
     </div>
