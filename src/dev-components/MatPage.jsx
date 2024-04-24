@@ -1,8 +1,13 @@
 import React from 'react'
+import Continue from '../components/RegisterContinue/Continue'
 
 function MatPage() {
   return (
-    <div>MatPage</div>
+    <div>
+
+    <Continue />
+
+    </div>
   )
 }
 
