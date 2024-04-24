@@ -1,16 +1,16 @@
 import { getPositionColor } from "../../helpers/func"
 
-function CardHomeLastWeek({ name, position, points, price }) {
+function CardHomeLastWeek({ name, position, points, price, status }) {
   return (
     <div className="w-full flex gap-2 items-center py-2 px-4 text-white">
       <div>
         <img src="/src/assets/shirt.png" alt="shirt" />
       </div>
       <div className="w-full">
-        <div>
+        <div className="mb-2">
           <p className="">{ name } <span className={`text-xs text-[${getPositionColor(position)}] font-semibold`}>{ position }</span></p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-8">
           <div className="flex gap-2 items-center text-xs font-semibold">
             <div>
               <p>{ points }</p>
@@ -32,7 +32,9 @@ function CardHomeLastWeek({ name, position, points, price }) {
         </div>
       </div>
       <div className="text-3xl bg-gradient-to-t from-primary to-focus bg-clip-text text-transparent">
-        <i className="fa-solid fa-arrow-up"></i>
+        {
+          status ? <i className="fa-solid fa-arrow-up"></i> : <i className="fa-solid fa-arrow-down"></i> 
+        }
       </div>
     </div>
   )
@@ -41,7 +43,7 @@ function CardHomeLastWeek({ name, position, points, price }) {
 function HomeLastWeek() {
   return (
     <div className="w-full p-2 bg-[#202020] flow-shadow rounded-lg">
-      <CardHomeLastWeek name='Lautaro Chaparro' position='DEL' points='53' price='10.0' />
+      <CardHomeLastWeek name='Lautaro Chaparro' position='DEL' points='53' price='10.0' status={true} />
       <CardHomeLastWeek name='Pietro Elviretti' position='DF' points='10' price='4.0'/>
     </div>
   )

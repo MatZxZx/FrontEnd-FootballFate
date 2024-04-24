@@ -28,5 +28,15 @@ export default [
     name: 'Duarte',
     teamname: 'Duarte CF',
     points: '89'
+  },
+  {
+    name: 'Delinquir_es_god',
+    teamname: 'VamosKristina',
+    points: '90'
+  },
+  {
+    name: 'Duarte',
+    teamname: 'Duarte CF',
+    points: '89'
   }
 ]

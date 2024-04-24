@@ -2,6 +2,7 @@ import { useState } from 'react'
 import playersList from '../../data/players'
 import { useEffect } from 'react'
 import PlayerListed from '../HomePlayerListed/PlayerListed'
+import './tabla.css'
 
 function TableCalification() {
   const [players, setPlayers] = useState([])
@@ -11,9 +12,9 @@ function TableCalification() {
   }, [])
 
   return (
-    <div className='w-[420px] flow-shadow rounded-lg bg-[#202020]'>
+    <div className='w-[420px] flow-shadow rounded-lg bg-[#202020] hidden-conten-tabla'>
       {
-        players.map((player, i) => <PlayerListed name={player.name} place={i + 1} points={player.points} team={player.teamname} />)
+        players.map((player, i) => <PlayerListed key={i} name={player.name} place={i + 1} points={player.points} team={player.teamname} />)
       }
     </div>
   )
