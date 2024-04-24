@@ -6,24 +6,18 @@ import Profile from './pages/Profile/Profile'
 import Register from './pages/Register/Register'
 import Welcome from './pages/Welcome/Welcome'
 import Team from './pages/Team/Team'
-import PlayerListed from './components/HomePlayerListed/PlayerListed'
-import StatsGrid from './components/HomePlayerStats/PlayerStats'
+
+// Componentes de desarrollo
+import MatPage from './dev-components/MatPage'
+import ChapPage from './dev-components/ChapPage'
+import DimiPage from './dev-components/DimiPage'
 
 function DevApp() {
   return (
     <Routes>
-      <Route path='/mati' element={<div>
-        <PlayerListed name={"negros"} place={"1RO"} team={"wOlloktastic"} points={100} />
-        <PlayerListed name={"negros"} place={"1RO"} team={"wOlloktastic"} points={100} />
-        <PlayerListed name={"negros"} place={"1RO"} team={"wOlloktastic"} points={100} />
-        <PlayerListed name={"negros"} place={"1RO"} team={"wOlloktastic"} points={100} />
-        <PlayerListed name={"negros"} place={"1RO"} team={"wOlloktastic"} points={100} />
-        
-      </div>} />
-      <Route path='facu'></Route>
-      <Route path='mati'></Route>
-      <Route path='facu' element={<StatsGrid />}></Route>
-      <Route path='chap'></Route>
+      <Route path='/mati' element={<MatPage />}></Route>
+      <Route path='/chap' element={<ChapPage />}></Route>
+      <Route path='/facu' element={<DimiPage />}></Route>
     </Routes>
   )
 }
@@ -32,11 +26,11 @@ function App() {
   return (
     // Paginas
     <Routes>
-      {/* Rutas Globales */}
+      {/* Rutas Publicas */}
       <Route path='/' element={<Landing />} />
       <Route path='/register' element={<Register />} />
       {/* Rutas Protegidas */}
-      <Route element={<ProtectedRoute/>} >
+      <Route element={<ProtectedRoute />} >
         <Route path='/home' element={<Home />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/welcome' element={<Welcome />} />

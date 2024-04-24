@@ -9,7 +9,7 @@ export default {
       colors: {
         primary: '#C2DD8D',
         secondary: '#247855',
-        focus: '#58C6CD'
+        focus: '#58C6CD',
       },
       fontFamily: {
         poppins: 'Poppins'
