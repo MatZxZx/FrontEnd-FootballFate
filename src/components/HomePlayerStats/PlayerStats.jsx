@@ -71,26 +71,26 @@ export default function StatsGrid(){
         
         <div class="div1">
         
-        <PlayerStats playerName='Tiziano' position='MC' points='101'></PlayerStats>
+        <PlayerStats playerName='Negros' position='DEL' points='69'></PlayerStats>
         
         </div>
 
         <div class="div2">
 
-        <PlayerStats playerName='Matias' position='DF' points='-1'></PlayerStats>
+        <PlayerStats playerName='Femboys' position='DF' points='-30'></PlayerStats>
 
         </div>
 
 
         <div class="div3">
 
-        <PlayerStats playerName='Chaparro' position='DEL' points='100'></PlayerStats>
+        <PlayerStats playerName='Tizis' position='PT' points='420'></PlayerStats>
 
         </div>
 
         <div class="div4">
 
-        <PlayerStats playerName='Moschen' position='PT' points='999'></PlayerStats>
+        <PlayerStats playerName='Matis' position='PT' points='-999999'></PlayerStats>
 
         </div>
     </div>
