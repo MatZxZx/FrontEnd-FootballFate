@@ -5,7 +5,7 @@ import TableCalification from '../components/TableCalification/TableCalification
 
 function ChapPage() {
   return (
-    <div className=''>
+    <>
       <Navbar />
       <div className='w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-8 pt-24'>
         <div className='flex flex-col gap-8'>
@@ -23,7 +23,7 @@ function ChapPage() {
           <TableCalification />
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import './navbar.css'
-// import {  } from '@flaticon/flaticon-uicons'
+import useNavbar from '../../hooks/useNavbar'
+import { useSelector } from 'react-redux'
+
 function Button({ type, id, className, ripple, onClick, style, children }) {
 
   useEffect(() => {
@@ -37,18 +39,21 @@ function Button({ type, id, className, ripple, onClick, style, children }) {
 }
 
 const icons = [
-  <i className="fa-solid fa-right-from-bracket"></i>,
+  <i key={12} className="fa-solid fa-right-from-bracket"></i>,
   <i key={0} className="cursor-pointer fa-solid fa-user"></i>,
   <i key={1} className="fi fi-ss-queue-alt"></i>,
   <i key={2} className="cursor-pointer fa-solid fa-house"></i>,
   <i key={3} className="fi fi-sr-convert-shapes"></i>,
   <i key={4} className="cursor-pointer fa-solid fa-trophy"></i>,
-  <i className="fi fi-sr-rank"></i>,
+  <i key={13} className="fi fi-sr-rank"></i>,
 ]
 
-function IconNavbar({ value, className, icon, onClick }) {
+function IconNavbar({ value, className, icon }) {
+
+  const { setIcon } = useNavbar()
+
   return (
-    <div onClick={() => onClick(value)} className={`${className}`}>
+    <div onClick={() => setIcon(value)} className={`${className}`}>
       <Button>
         { icon }
       </Button>
@@ -57,14 +62,17 @@ function IconNavbar({ value, className, icon, onClick }) {
 }
 function Navbar() {
 
-  const [selectedIcon, setSelectedIcon] = useState(0)
+  const navbarState = useSelector(state => state.navbar)
 
   return (
     <div className='fixed h-full max-w-max text-2xl text-white flex items-center justify-center bg-[#202020] py-4 px-4'>
       <div className='flex flex-col items-center'>
         {
           icons.map((icon, i) => {
-            return selectedIcon === i ? <IconNavbar value={i} key={i} className='navbar-selected-icon' icon={icon} onClick={setSelectedIcon} /> : <IconNavbar value={i} key={i} className='' icon={icon} onClick={setSelectedIcon} />
+            if (navbarState.selectedIcon === navbarState.valueInactive) {
+              return <IconNavbar value={i} key={i} className='' icon={icon} />
+            }
+            return navbarState.selectedIcon === i ? <IconNavbar value={i} key={i} className='navbar-selected-icon' icon={icon} /> : <IconNavbar value={i} key={i} className='' icon={icon} />
           })
         }
       </div>
