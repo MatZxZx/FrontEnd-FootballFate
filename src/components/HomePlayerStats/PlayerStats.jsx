@@ -1,18 +1,7 @@
 import './PStats.css'
 import { getPositionColor } from '../../helpers/func'
 
-function position_color(position) {
-  switch (position) {
-    case 'DF':
-      return 'text-[#58C6CD]'
-    case 'DEL':
-      return 'text-[#C71919]'
-    case 'MC':
-      return 'text-[#E3E816]'
-    case 'PT':
-      return 'text-[#CC40E2]'
-  }
-}
+
 
 function PlayerStats({ playerName, position, points }) {
   return (

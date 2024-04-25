@@ -1,8 +1,11 @@
 import React from 'react'
+import ScrollFilter from '../components/ScrollFilter/ScrollFilter'
 
 function DimiPage() {
   return (
-    <div>DimiPage</div>
+    <div>
+      <ScrollFilter/>
+    </div>
   )
 }
 
