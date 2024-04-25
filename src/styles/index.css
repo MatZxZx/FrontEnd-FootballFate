@@ -11,3 +11,13 @@ body {
 .flow-shadow {
     box-shadow: -1px 5px 15px 2px rgb(41, 229, 85, .1);
 }
+
+.campo-de-fulbo {
+    width: 768px;
+    height: 768px;
+    background-image: url('/src/assets/Frame\ foto.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+    margin-top: 4rem;
+}

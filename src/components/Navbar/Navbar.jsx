@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './navbar.css'
 import useNavbar from '../../hooks/useNavbar'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import icons from './icons'
 
 function Button({ type, id, className, ripple, onClick, style, children }) {
 
@@ -38,16 +40,6 @@ function Button({ type, id, className, ripple, onClick, style, children }) {
   )
 }
 
-const icons = [
-  <i key={12} className="fa-solid fa-right-from-bracket"></i>,
-  <i key={0} className="cursor-pointer fa-solid fa-user"></i>,
-  <i key={1} className="fi fi-ss-queue-alt"></i>,
-  <i key={2} className="cursor-pointer fa-solid fa-house"></i>,
-  <i key={3} className="fi fi-sr-convert-shapes"></i>,
-  <i key={4} className="cursor-pointer fa-solid fa-trophy"></i>,
-  <i key={13} className="fi fi-sr-rank"></i>,
-]
-
 function IconNavbar({ value, className, icon }) {
 
   const { setIcon } = useNavbar()
@@ -69,10 +61,18 @@ function Navbar() {
       <div className='flex flex-col items-center'>
         {
           icons.map((icon, i) => {
+            
             if (navbarState.selectedIcon === navbarState.valueInactive) {
-              return <IconNavbar value={i} key={i} className='' icon={icon} />
+              return <Link key={icon.to} to={icon.to}>
+                <IconNavbar value={i} className='' icon={icon.label} />
+              </Link>
             }
-            return navbarState.selectedIcon === i ? <IconNavbar value={i} key={i} className='navbar-selected-icon' icon={icon} /> : <IconNavbar value={i} key={i} className='' icon={icon} />
+
+            return <Link key={icon.to} to={icon.to}>
+              {
+                navbarState.selectedIcon === i ? <IconNavbar className='navbar-selected-icon' icon={icon.label} value={i} /> : <IconNavbar className='' icon={icon.label} value={i} />
+              }
+            </Link>
           })
         }
       </div>

@@ -2,7 +2,7 @@ import FormLogin from "../FormLogin/FormLogin"
 
 function LandingSectionHeader() {
   return (
-    <div className='w-full flex justify-between'>
+    <div className='w-full flex flex-col sm:flex-row justify-between'>
       <div className='w-1/2 flex flex-col gap-4 items-start justify-center'>
         <p className='pl-2 text-2xl text-primary font-poppins font-semibold'>Bienvenido a</p>
         <div>

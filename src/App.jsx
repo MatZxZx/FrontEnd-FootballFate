@@ -11,14 +11,34 @@ import Team from './pages/Team/Team'
 import MatPage from './dev-components/MatPage'
 import ChapPage from './dev-components/ChapPage'
 import DimiPage from './dev-components/DimiPage'
+import Navbar from './components/Navbar/Navbar'
+import { useEffect, useState } from 'react'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function DevApp() {
   return (
-    <Routes>
-      <Route path='/mati' element={<MatPage />}></Route>
-      <Route path='/chap' element={<ChapPage />}></Route>
-      <Route path='/facu' element={<DimiPage />}></Route>
-    </Routes>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
+      <Routes>
+        <Route path='/mati' element={<MatPage />}></Route>
+        <Route path='/chap' element={<ChapPage />}></Route>
+        <Route path='/facu' element={<DimiPage />}></Route>
+      </Routes>
+    </>
+
   )
 }
 
@@ -35,6 +55,8 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/welcome' element={<Welcome />} />
         <Route path='/team' element={<Team />} />
+        <Route path='/rank' element={<Home />} />
+        <Route path='/transfer' element={<Home />} />
       </Route>
     </Routes>
   )
