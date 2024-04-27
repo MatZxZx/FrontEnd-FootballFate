@@ -1,11 +1,12 @@
-import React from 'react'
-import Navbar from '../../components/Navbar/Navbar'
+import TeamComponent from '../../components/Team/Team'
+import dataTeam from '../../data/team'
+import LayoutPage from '../../layouts/LayoutPage'
 
 function Team() {
   return (
-    <div>
-      <Navbar />
-    </div>
+    <LayoutPage>
+      <TeamComponent dataTeam={dataTeam} />
+    </LayoutPage>
   )
 }
 

@@ -1,11 +1,16 @@
 import FormRegister from '../../components/FormRegister/FormRegister'
+import LayoutPage from '../../layouts/LayoutPage'
 
 function Register() {
   return (
-    <div className='flex flex-col justify-center items-center mt-12'>
-      <h1 className='title-login font-bold text-4xl mb-4'>Inicia Sesion o Registrate</h1>
-      <FormRegister />
-    </div>
+    <LayoutPage>
+      <div className='flex flex-col gap-2 justify-center items-center'>
+        <h1 className='text-white font-poppins font-bold text-4xl mb-4'>Inicia Sesion o Registrate</h1>
+        <div className='w-[512px]'>
+          <FormRegister />
+        </div>
+      </div>
+    </LayoutPage>
   )
 }
 

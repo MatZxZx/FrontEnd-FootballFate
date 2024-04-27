@@ -16,3 +16,8 @@ export function getPositionColor(position) {
       return '#fff'
   }
 }
+
+export function toCapitalaze(string) {
+  const s = string.slice(0)
+  return s[0].toUpperCase() + s.slice(1)
+}

@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 export const navbarSlice = createSlice({
   name: 'navbar',
   initialState: {
-    valueInactive: -1,
-    selectedIcon: -1
+    valueInactive: '',
+    selectedIcon: ''
   },
   reducers: {
     changeIcon: (state, action) => {

@@ -2,7 +2,7 @@ import './PlayerListed.css'
 
 export default function PlayerListed({ name, team, place, points }) {
   return (
-      <div className='w-full PlayerListed flex'>
+      <div className='w-full PlayerListed flex justify-center items-center'>
         <img className='playerImg' src="/src/assets/profile.png" alt="player" />
         <div className='w-full playerNameNTeam'>
           <p>{name}</p>

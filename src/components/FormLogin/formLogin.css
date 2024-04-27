@@ -17,16 +17,15 @@
     font-size: 1rem;
     border-radius: 1rem;
     color: black;
-    box-shadow: 0 0.4rem #a1a1a1;
-    border: 5px solid transparent;
+    outline: none;
 }
 
 .input-auth:focus {
-    border-color: #a1a1a1!important;
+    outline: 3px solid #247855;
 }
 
 .input-auth-invalid {
-    border-color: #B81212 !important;
+    outline: 3px solid #B81212 !important;
 }
 
 .input-auth-invalid::placeholder {

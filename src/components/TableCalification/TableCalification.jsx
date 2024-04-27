@@ -12,7 +12,7 @@ function TableCalification() {
   }, [])
 
   return (
-    <div className='w-[420px] flow-shadow rounded-lg bg-[#202020] hidden-conten-tabla'>
+    <div className='w-[512px] flow-shadow rounded-lg bg-[#202020] hidden-conten-tabla px-4 py-2'>
       {
         players.map((player, i) => <PlayerListed key={i} name={player.name} place={i + 1} points={player.points} team={player.teamname} />)
       }

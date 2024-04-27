@@ -6,6 +6,7 @@ import { AppContextProvider } from './contexts/AppContext.jsx'
 import { Provider } from 'react-redux'
 import store from './redux/app/store.js'
 import './styles/index.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

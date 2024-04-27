@@ -1,8 +1,13 @@
 import React from 'react'
+import Continue from '../../components/RegisterContinue/RegisterContinue'
+import ScrollFilter from '../../components/ScrollFilter/ScrollFilter'
 
 function Welcome() {
   return (
-    <div>Welcome</div>
+    <div>
+      {/* <Continue /> */}
+      {/* <ScrollFilter />       */}
+    </div>
   )
 }
 

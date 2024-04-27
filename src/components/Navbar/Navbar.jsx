@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react'
-import './navbar.css'
+import { useEffect } from 'react'
 import useNavbar from '../../hooks/useNavbar'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import icons from './icons'
+import { toCapitalaze } from '../../helpers/func'
+import './navbar.css'
+import useAuth from '../../hooks/useAuth'
 
-function Button({ type, id, className, ripple, onClick, style, children }) {
+function Icon({ name, icon, to, isSelected = false }) {
+  const { setIcon } = useNavbar()
 
   useEffect(() => {
     const btnRipple = document.querySelectorAll('.btn-ripple')
@@ -14,9 +17,7 @@ function Button({ type, id, className, ripple, onClick, style, children }) {
         let x = (pageX - currentTarget.offsetLeft) * 100 / currentTarget.offsetWidth
         let y = (pageY - currentTarget.offsetTop) * 100 / currentTarget.offsetHeight
         const ripple = document.createElement('span')
-        const rippleColor = btn.CDATA_SECTION_NODE.riplee || '#fff'
         ripple.classList.add('ripple-effect')
-        ripple.style.background = rippleColor
         btn.appendChild(ripple)
         ripple.style.left = x + '%'
         ripple.style.top = y + '%'
@@ -28,55 +29,39 @@ function Button({ type, id, className, ripple, onClick, style, children }) {
   }, [])
 
   return (
-    <button
-      className={`btn btn-ripple ${className ? className : ''}`}
-      type={type ? type : 'button'}
-      id={id}
-      data-ripple={ripple}
-      onClick={onClick}
-      style={style}>
-      {children}
-    </button>
+    <Link to={to} onClick={() => setIcon(name)} className={`icon-navbar btn btn-ripple ${isSelected ? 'text-focus' : ''}`}>
+      {icon}
+      <p>{toCapitalaze(name)}</p>
+    </Link>
   )
 }
 
-function IconNavbar({ value, className, icon }) {
-
-  const { setIcon } = useNavbar()
-
-  return (
-    <div onClick={() => setIcon(value)} className={`${className}`}>
-      <Button>
-        { icon }
-      </Button>
-    </div>
-  )
-}
 function Navbar() {
-
   const navbarState = useSelector(state => state.navbar)
+  const authState = useSelector(state => state.auth)
+
+  if (!authState.isAuth) {
+    return (
+      <>
+      </>
+    )
+  }
 
   return (
-    <div className='fixed h-full max-w-max text-2xl text-white flex items-center justify-center bg-[#202020] py-4 px-4'>
+    <nav className='fixed ml-6 h-full max-w-max text-2xl text-white flex items-center justify-center bg-[#202020] flow-shadow '>
       <div className='flex flex-col items-center'>
         {
-          icons.map((icon, i) => {
-            
-            if (navbarState.selectedIcon === navbarState.valueInactive) {
-              return <Link key={icon.to} to={icon.to}>
-                <IconNavbar value={i} className='' icon={icon.label} />
-              </Link>
-            }
+          icons.map(({ key, name, to, label }) => {
+            if (navbarState.selectedIcon === navbarState.valueInactive)
+              return <Icon key={key} name={name} to={to} icon={label} />
 
-            return <Link key={icon.to} to={icon.to}>
-              {
-                navbarState.selectedIcon === i ? <IconNavbar className='navbar-selected-icon' icon={icon.label} value={i} /> : <IconNavbar className='' icon={icon.label} value={i} />
-              }
-            </Link>
+            return name === navbarState.selectedIcon
+              ? <Icon key={key} name={name} to={to} icon={label} isSelected={true} />
+              : <Icon key={key} name={name} to={to} icon={label} />
           })
         }
       </div>
-    </div>
+    </nav>
   )
 }
 

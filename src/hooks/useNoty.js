@@ -9,7 +9,7 @@ export const notify = (m) => (toast(m, {
   draggable: true,
   progress: undefined,
   theme: "dark",
-  className: 'font-black',
+  className: 'text-xs font-poppins font-black italic ',
 }))
 
 export const errorNotify = (m) => (toast(m, {
@@ -21,6 +21,7 @@ export const errorNotify = (m) => (toast(m, {
   draggable: true,
   progress: undefined,
   theme: "dark",
-  className: 'font-black',
-  type: 'error'
+  className: 'text-xs font-poppins font-black italic ',
+  type: 'error',
+  closeButton: false,
 }))

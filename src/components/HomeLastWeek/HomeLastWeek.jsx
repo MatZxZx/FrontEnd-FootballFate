@@ -2,9 +2,9 @@ import { getPositionColor } from "../../helpers/func"
 
 function CardHomeLastWeek({ name, position, points, price, status }) {
   return (
-    <div className="w-full flex gap-2 items-center py-2 px-4 text-white">
+    <div className="w-full flex items-center p-2 text-white bg-[#202020] flow-shadow">
       <div>
-        <img src="/src/assets/shirt.png" alt="shirt" />
+        <img className="w-24" src="/src/assets/shirt.png" alt="shirt" />
       </div>
       <div className="w-full">
         <div className="mb-2">
@@ -42,7 +42,7 @@ function CardHomeLastWeek({ name, position, points, price, status }) {
 
 function HomeLastWeek() {
   return (
-    <div className="w-full p-2 bg-[#202020] flow-shadow rounded-lg">
+    <div className="w-full flex flex-col gap-4">
       <CardHomeLastWeek name='Lautaro Chaparro' position='DEL' points='53' price='10.0' status={true} />
       <CardHomeLastWeek name='Pietro Elviretti' position='DF' points='10' price='4.0'/>
     </div>
