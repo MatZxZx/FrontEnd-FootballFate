@@ -13,6 +13,10 @@ export default {
       },
       fontFamily: {
         poppins: 'Poppins'
+      },
+      backgroundColor: {
+        focus: '#58C6CD',
+        secondary: '#247855'
       }
     },
   },

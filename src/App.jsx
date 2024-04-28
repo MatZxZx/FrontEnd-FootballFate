@@ -10,6 +10,7 @@ import Team from './pages/Team/Team'
 import Rank from './pages/Rank/Rank'
 import Transfer from './pages/Transfer/Transfer'
 import AllPlayers from './pages/AllPlayers/AllPlayers'
+import Page404 from './pages/404/Page404'
 import { ToastContainer } from 'react-toastify'
 
 // Componentes de desarrollo
@@ -82,6 +83,7 @@ function App() {
         <Route path='/rank' element={<Rank />} />
         <Route path='/transfer' element={<Transfer />} />
         <Route path='/allplayers' element={<AllPlayers />} />
+        <Route path='/*' element={<Page404 />} />
         {/* </Route> */}
       </Routes>
     </>

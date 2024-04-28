@@ -5,7 +5,7 @@ import LayoutPage from '../../layouts/LayoutPage'
 function Team() {
   return (
     <LayoutPage>
-      <TeamComponent dataTeam={dataTeam} />
+      <TeamComponent dataTeam={dataTeam} budget={1000} />
     </LayoutPage>
   )
 }

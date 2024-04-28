@@ -40,7 +40,7 @@ function Navbar() {
   const navbarState = useSelector(state => state.navbar)
   const authState = useSelector(state => state.auth)
 
-  if (!authState.isAuth) {
+  if (authState.isAuth) {
     return (
       <>
       </>
