@@ -1,0 +1,65 @@
+.playerListed{
+    font-size: medium;
+    font-family: Poppins;
+    color: white;
+    display: flex;
+
+}
+
+.shirt{
+
+    width: max-content;
+    height: max-content;
+    transform: scale(1.4);
+
+}
+
+.nameNPosition{
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+}
+
+.playerName{
+
+    font-size:large;
+
+}
+
+.playerPosition{
+
+    font-size: small;
+    color: red;
+
+}
+
+.statsNstars{
+
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.stats{
+
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+}
+
+.stars{
+
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+}
+
+.checked {
+    color: rgb(0, 231, 220);
+  }
+
