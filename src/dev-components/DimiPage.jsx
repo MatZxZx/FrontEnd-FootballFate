@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollFilter from '../components/ScrollFilter/ScrollFilter'
+import { ScrollFilter } from '../components/ScrollFilter/ScrollFilter'
 import { playerComp } from '../helpers/func'
 
 

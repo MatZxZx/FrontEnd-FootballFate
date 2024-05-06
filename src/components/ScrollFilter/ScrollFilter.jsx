@@ -41,7 +41,7 @@ function PlayersOnScreen({players}){
 
 }
 
-export default function ScrollFilter({ players }){
+export function ScrollFilter({ players }){
 
     let [showList, setList]  = useState(players)
     const [name, setName] = useState('')
