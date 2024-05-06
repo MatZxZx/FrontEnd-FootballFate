@@ -1,10 +1,12 @@
 import React from 'react'
 import ScrollFilter from '../components/ScrollFilter/ScrollFilter'
+import { playerComp } from '../helpers/func'
+
 
 function DimiPage() {
   return (
     <div>
-      <ScrollFilter/>
+      <ScrollFilter players={playerComp} />
     </div>
   )
 }
